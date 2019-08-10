@@ -1,0 +1,222 @@
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    max-width: 100%;
+    height: 100%;
+    font: normal 100% 'Montserrat', sans-serif;
+    background-image: url('images/texture3.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.wrapper {
+    display: flex column wrap;
+    padding: 1% 0;
+    text-align: center;
+    position: relative;
+    background-size: contain;
+    background-position: center;
+}
+
+.wrapper h1 {
+    box-shadow: border-box;
+    padding: 1% 0;
+    font-size: calc(200% + 2.5vw);
+    font-weight: bolder;
+    letter-spacing: 3px;
+    color: rgb(15, 157, 175);
+    text-shadow: 3px 3px rgb(252, 238, 193), -1px -1px rgb(252, 238, 193);
+}
+
+.subtitle {
+    background-color: rgba(252, 238, 193, .6);
+    font-size: calc(100% + 1.5vw);
+    padding: 1.5%;
+    font-weight: bolder;
+    box-shadow: 0 1px 3px rgb(19, 182, 204), 0 -1px 3px rgb(19, 182, 204);
+    color: rgb(252, 238, 193);
+    text-shadow: -2px -2px 0 rgb(19, 182, 204), 2px -2px 0 rgb(19, 182, 204), -2px 2px 0 rgb(19, 182, 204), 2px 2px 0 rgb(19, 182, 204);
+}
+
+.new-game-button {
+    position: absolute;
+    top: calc(1vw - .5%);
+    right: 0;
+    height: calc(10% - 1vw);
+    width: calc(16% - 1vw);
+    overflow-wrap: break-word;
+    font-size: calc(.7em + .5vw);
+    padding: 5px;
+    border: none;
+    border-top-left-radius: 30px;
+    border-bottom-left-radius: 30px;
+    background-color: rgba(252, 238, 193, .4);
+    color: rgb(25, 90, 110);
+    font-variant: small-caps;
+    box-shadow: 0 2px 3px rgb(19, 182, 204), 0 -1px 2px rgb(19, 182, 204);
+}
+
+.new-game-button:focus {
+    outline: none;
+}
+
+.card-panel-wrapper {
+    min-height: 80vh;
+    margin: auto 0;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-content: center;
+}
+
+.card {
+    box-sizing: border-box;
+    flex-basis: 30%;
+    height: calc(8em + 10vw);
+    margin: 1%;
+    perspective: 2000px;
+    -webkit-perspective: 2000px;
+    -moz-perspective: 2000px;
+}
+
+.inner-card {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    transform-style: preserve-3d;
+    -webkit-transform-style: preserve-3d;
+    -moz-transform-style: preserve-3d;
+    transition: transform 2.5s;
+    border-radius: 5px;
+    box-shadow: 0px 0px 5px rgb(252, 238, 193);
+    background-color: rgb(252, 238, 193);
+}
+
+.card-front,
+.card-back {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    backface-visibility: hidden;
+    transform: rotateX(0deg);
+    border-radius: inherit;
+    background-color: rgb(252, 238, 193);
+}
+
+.card-front {
+    z-index: 3;
+    background-color: rgb(252, 238, 193);
+    background-image: url('images/footprints.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.card-back {
+    transform: rotateY(180deg);
+    z-index: 1;
+    border: 2px solid rgb(252, 238, 193);
+}
+
+.card-back-image {
+    height: 80%;
+    background-color: inherit;
+    background-size: cover;
+    background-position: center;
+    position: relative;
+    border-top-right-radius: 5px;
+    border-top-left-radius: 5px;
+}
+
+.card-back-text {
+    width: 100%;
+    height: 20%;
+    font-size: 1.4em;
+    font-weight: bold;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: rgb(25, 90, 110);
+}
+
+.flipped {
+    -moz-transform: rotateY(180deg);
+    -ms-transform: rotateY(180deg);
+    -webkit-transform: rotateY(180deg);
+    -o-transform: rotateY(180deg);
+    transform: rotateY(180deg);
+}
+
+.end-game-panel {
+    box-sizing: border-box;
+    min-height: 35%;
+    width: 70%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    margin: inherit;
+    padding: 5% 2%;
+    background-color: rgba(255, 255, 255, 0.9);
+    z-index: 10;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-content: space-between;
+}
+
+.end-game-panel p {
+    box-sizing: border-box;
+    width: 100%;
+    padding: 5% 1%;
+    font-size: calc(100% + 1vw);
+}
+
+.end-game-panel span {
+    box-sizing: border-box;
+    display: block;
+    padding-bottom: 5%;
+    font-size: calc(100% + 2vw);
+    font-weight: bolder;
+}
+
+.end-game-panel button {
+    margin: 1%;
+    width: 45%;
+    min-height: calc(4em - 2vw);
+    background-color: rgba(11, 104, 128, .8);
+    color: white;
+    font-size: calc(100% + 1.5vw);
+    font-weight: bolder;
+}
+
+.end-game-panel button:focus {
+    outline: none;
+}
+
+footer {
+    background-color: rgba(252, 238, 193, .6);
+    font-size: .8em;
+    padding: .5%;
+    box-shadow: 0 1px 3px rgb(19, 182, 204), 0 -1px 3px rgb(19, 182, 204);
+    color: rgb(15, 157, 175);
+    font-variant: small-caps;
+    text-align: center;
+}
+
+@media all and (min-width: 160px) and (max-width: 567px) {
+    .card {
+        flex-basis: 45%;
+    }
+    .end-game-panel {
+        width: 90%;
+    }
+}
